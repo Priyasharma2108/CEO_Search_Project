@@ -2,15 +2,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 import csv
 import requests
-import json
 from bs4 import BeautifulSoup 
-from .models import Name
-from googlesearch import search
-from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
-from .forms import NameForm
-import openai
-from urllib.parse import quote
 
 # Create your views here.
 def index(request):
