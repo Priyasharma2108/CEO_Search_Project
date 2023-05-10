@@ -18,10 +18,6 @@ from pathlib import Path , os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, 'static')
-]
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -29,9 +25,9 @@ STATICFILES_DIRS = [
 SECRET_KEY = 'django-insecure-ntt)qu77uis^6=jxjm3ddtiaqhm-p)l=dc+k3h3h%y47wgq37p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -122,7 +118,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static')
+    ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticFiles')
+
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+MEDIA_URL = '/media/'
 
 
 # Default primary key field type
